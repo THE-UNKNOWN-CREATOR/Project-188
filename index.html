@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="./target.js"></script>
+</head>
+<body>
+    <a-scene id="main-scene" background="color:#000">
+        
+        <a-entity id="cam" position="0 0 5"  camera>
+            <!--Header-->
+            <a-entity id="header" position="1 -4 0">
+            <a-entity position="-29.5 22 0" text="font:exo2bold; align:center; width:40; color:white; value:BALL THROWING;"></a-entity>
+             
+            <!--Score-->
+            <a-entity id="scoreHolder" position="30 21 0">
+             <a-entity position="-3 0 0" text="font:exo2bold; align:center; width:40; color:white; value:SCORE;"></a-entity>
+       
+             <a-entity id="score" position="1 0 0" text="font:exo2bold; align:center; width:40; color:white; value:0;"></a-entity>
+            </a-entity>
+       
+        </a-entity>
+
+        <a-sphere id="ball" scale="0.5 0.5 0.5" position="0 0 2" color="#ff6600" dynamic-body="mass: 0.5">
+            <a-entity id="target" target>
+                <a-entity id="tline"></a-entity>
+            </a-entity>
+        </a-sphere>
+        <a-box id="ground" position="0 -2 0" scale="50 0 50" static-body></a-box>
+        
+    </a-scene>
+</body>
+</html>
